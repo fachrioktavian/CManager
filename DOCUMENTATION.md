@@ -7,6 +7,7 @@ DCM needs some python module:
 - colorama: `sudo pip install colorama`
 - terminaltables: `sudo pip install terminaltables `
 - pbkdf2: `sudo pip install pbkdf2`
+- netifaces: `sudo pip install netifaces`
 
 DCM needs some program/binary in sudoers file's whitelist so it won't ask for password while executing those program:
 - iwlist
