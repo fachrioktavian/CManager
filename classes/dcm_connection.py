@@ -26,7 +26,7 @@ from colorama import Fore, Back, Style, init
 class Dcm_connection(object):
 
 	init(autoreset=True)
-	profile_path = 'profile/'
+	profile_path = '/usr/share/dcm/profile/'
 
 	ACT_SYSTEM = 'system'
 	ACT_POS = '+'
