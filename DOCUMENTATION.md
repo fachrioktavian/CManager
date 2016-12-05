@@ -14,6 +14,8 @@ DCM needs some program/binary in sudoers file's whitelist so it won't ask for pa
 - dhclient
 - pkill
 
+Create directory `/usr/share/dcm` then clone/copy all dcm files on it. 
+
 To make you easier in installing DCM, just use install.sh script. You just need to supply the active id that will use DCM as the parameter, ex: johndoe. So installation will be `sudo ./install.sh johndoe`  
 
 ##DracOS Connection Manager v1.0
