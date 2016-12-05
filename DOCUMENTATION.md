@@ -22,7 +22,7 @@ Create directory `/usr/share/dcm` then clone/copy all dcm files on it.
 To make you easier in installing DCM, just use install.sh script. You just need to supply the active id that will use DCM as the parameter, ex: johndoe. So installation will be `sudo ./install.sh johndoe`  
 
 ##DracOS Connection Manager v1.0
-Don't forget to type `help` inside DCM to get information about available commands
+Don't forget to run dcm as with `sudo dcm`, type `help` inside DCM to get information about available commands
 
 ![](screenshots/help.jpeg) 
 
