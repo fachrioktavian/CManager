@@ -159,6 +159,7 @@ class Dcm_connection(object):
 		try:
 			p = subprocess.Popen(['sudo']+program+cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=1)
 			for line in iter(p.stdout.readline, b''):
+				#print line
 				if self.WPA_CONNECTED in line:
 					self.debug(2, self.ACT_POS, 1, 'Connected')
 					flagExecDhclient = self.exec_dhclient(iface)
