@@ -153,7 +153,7 @@ class Dcm_app(object):
 			elif self.cmd == 'del':
 				if self.list_param[0]=='profile' and total_param==2:
 					profile = self.list_param[1]
-					flagDel = self.dcm_connection_handler.del_profile(profile)
+					flagDel = self.dcm_connection_handler.delete_profile(profile)
 					if flagDel: self.debug(1, self.ACT_POS, 1, 'Profile\'s deleted')
 				else: self.debug(1, self.ACT_NEG, 2, 'Profile\'s couldn\'t be deleted')
 			elif self.cmd == 'use' and total_param==1:
