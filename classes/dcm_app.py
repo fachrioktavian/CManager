@@ -32,8 +32,8 @@ class Dcm_app(object):
     init(autoreset=True)
 
     """
-	constant declaration
-	"""
+    constant declaration
+    """
     INFO = 0
     SUCCEED = 1
     FAILED = 2
@@ -53,7 +53,6 @@ class Dcm_app(object):
     ]
 
     def app_header(self):
-
         header = '\n'
         header += '\t████████▄   ▄████████    ▄▄▄▄███▄▄▄▄   \n'
         header += '\t███   ▀███ ███    ███  ▄██▀▀▀███▀▀▀██▄ \n'
@@ -63,9 +62,7 @@ class Dcm_app(object):
         header += '\t███    ███ ███    █▄   ███   ███   ███ \n'
         header += '\t███   ▄███ ███    ███  ███   ███   ███ \n'
         header += '\t████████▀  ████████▀    ▀█   ███   █▀  \n'
-
         header2 = '\tDracOS Connection Manager\n'
-
         header3 = '------------------------------------------------------------------------------\n'
         header3 += '- Version      : 1.0                                                         -\n'
         header3 += '- Release Date : December 4th, 2016                                          -\n'
@@ -73,7 +70,6 @@ class Dcm_app(object):
         header3 += '- Dev by       : Fachrizal Oktavian                                          -\n'
         header3 += '-                                                     << dracos-linux.org >> -\n'
         header3 += '------------------------------------------------------------------------------\n'
-
         print (Fore.RED + Style.DIM + header + header2)
         print (Fore.CYAN + Style.DIM + header3)
 
@@ -99,8 +95,8 @@ class Dcm_app(object):
         self.dcm_help_handler = Dcm_help()
 
         """
-		resolve interfaces
-		"""
+        resolve interfaces
+        """
         self.dcm_interfaces_handler.resolve_Interfaces()
         self.list_ifaces_wireless = self.dcm_interfaces_handler.get_ifaces_wireless()
         self.list_ifaces_ethernet = self.dcm_interfaces_handler.get_ifaces_ethernet()
