@@ -1,8 +1,8 @@
 #/bin/sh
-$iwlistbin=$(which iwlist)
-$wpabin=$(which wpa_supplicant)
-$dhclientbin=$(which dhclient)
-$pkillbin=$(which pkill)
+iwlistbin=$(which iwlist)
+wpabin=$(which wpa_supplicant)
+dhclientbin=$(which dhclient)
+pkillbin=$(which pkill)
 if [ -z "$iwlistbin" ] || [ -z "$wpabin" ] || [ -z "$dhclientbin" ] || [ -z "$pkillbin" ]
 then
 	echo "One of these program are not founded in your system:"
