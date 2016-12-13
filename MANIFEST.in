@@ -3,5 +3,4 @@ include install.sh
 include README.rst
 include LICENSE.txt
 include CHANGELOG.md
-recursive-include dcm *
 recursive-include screenshots *

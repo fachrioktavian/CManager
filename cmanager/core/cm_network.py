@@ -15,15 +15,15 @@
 # along with DracOS Connection Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-dcm_network
+cm_network
 """
 import subprocess
-from dcm.classes.dcm_iw_parse import get_parsed_cells
+from cmanager.core.cm_iw_parse import get_parsed_cells
 from terminaltables import AsciiTable
 from colorama import Fore, Back, Style, init
 
 
-class Dcm_network(object):
+class Cm_network(object):
 
     init(autoreset=True)
     parsed_cells = []

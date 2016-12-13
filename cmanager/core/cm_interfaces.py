@@ -15,7 +15,7 @@
 # along with DracOS Connection Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-dcm_interfaces
+cm_interfaces
 """
 
 import netifaces
@@ -24,7 +24,7 @@ from terminaltables import AsciiTable
 from colorama import Fore, Back, Style, init
 
 
-class Dcm_interfaces(object):
+class Cm_interfaces(object):
 
     init(autoreset=True)
 

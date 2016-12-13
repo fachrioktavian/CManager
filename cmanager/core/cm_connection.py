@@ -15,7 +15,7 @@
 # along with DracOS Connection Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-dcm_connection
+cm_connection
 """
 
 import pbkdf2
@@ -26,10 +26,10 @@ import time
 from colorama import Fore, Back, Style, init
 
 
-class Dcm_connection(object):
+class Cm_connection(object):
 
     init(autoreset=True)
-    profile_path = '/usr/share/dcm/profile/'
+    profile_path = '/usr/share/cmanager/profile/'
 
     ACT_SYSTEM = 'system'
     ACT_POS = '+'

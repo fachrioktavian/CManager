@@ -1,8 +1,10 @@
 #/bin/sh
+
 iwlistbin=$(which iwlist)
 wpabin=$(which wpa_supplicant)
 dhclientbin=$(which dhclient)
 pkillbin=$(which pkill)
+
 if [ -z "$iwlistbin" ] || [ -z "$wpabin" ] || [ -z "$dhclientbin" ] || [ -z "$pkillbin" ]
 then
 	echo "One of these program are not founded in your system:"
@@ -46,7 +48,7 @@ else
 		sudo echo "ALL ALL=(ALL) NOPASSWD: $pkillbin" >> /etc/sudoers
 	fi
 
-	sudo mkdir /usr/share/dcm
-	sudo cp -R * /usr/share/dcm/
-	sudo ln -s /usr/share/dcm/dcm/dcm.py /bin/dcm
+	sudo mkdir /usr/share/cmanager
+	sudo cp -R * /usr/share/cmanager/
+	sudo ln -s /usr/share/cmanager/cmanager/cmanager.py /bin/cmanager
 fi

@@ -15,23 +15,23 @@
 # along with DracOS Connection Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-dcm_help
+cm_help
 """
 
 from colorama import Fore, Back, Style, init
 
 
-class Dcm_help(object):
+class Cm_help(object):
 
     init(autoreset=True)
 
     def show_help(self):
         help = 'dashboard section:\n'
-        help += ' show interfaces          : Print all interfaces found by dcm\n'
+        help += ' show interfaces          : Print all interfaces found by cmanager\n'
         help += ' wizard wifi              : Go to wifi wizard section\n'
-        help += ' exit                     : Exit dcm\n\n'
+        help += ' exit                     : Exit cmanager\n\n'
         help += 'wifi-wizard section:\n'
-        help += ' show profile             : List profile that saved by dcm\n'
+        help += ' show profile             : List profile that saved by cmanager\n'
         help += ' show options             : List available options used to create a profile\n'
         help += ' set [options] [value]    : Set value to available options before save the profile\n'
         help += ' save profile             : Save profile after options data\'s been filled\n'
