@@ -3,26 +3,26 @@
 
 import os
 from setuptools import (setup, find_packages)
-from dcm import (__version__, __author__, __author_email__)
+from cmanager import (__version__, __author__, __author_email__)
 
 setup(
-    name="dcm",
-    packages=find_packages(exclude=["*.demo"]),
+    name="cmanager",
+    packages=find_packages(),
     version=__version__,
     platforms=["Linux"],
-    url="https://github.com/fachrioktavian/DracOS-Connection-Manager/",
-    download_url="https://github.com/fachrioktavian/DracOS-Connection-Manager/tarball/{}".format(
+    url='https://github.com/fachrioktavian/DracOS-Connection-Manager/',
+    download_url='https://github.com/fachrioktavian/DracOS-Connection-Manager/tarball/{}'.format(
         __version__),
-    description="Command Line Interface for DracOS Linux users to manage their connection ex: wifi connection.",
+    description="CLI (Command Line Interface) for DracOS Linux's users to manage their connection ex: wifi connection.",
     long_description=open("README.rst").read(),
     license="GPLv3",
     author=__author__,
     author_email=__author_email__,
     zip_safe=False,
     include_package_data=True,
-    keywords=["dcm", "dracos connection manager", "connection manager"],
+    keywords=["cmanager", "dracos connection manager", "connection manager"],
     entry_points={
-        "console_scripts": ["dcm=dcm.dcm:main", ],
+        "console_scripts": ["cmanager=cmanager.cmanager:main", ],
     },
     install_requires=[
         "colorama>=0.3.7", "terminaltables>=3.1.0",

@@ -15,12 +15,12 @@
 # You should have received a copy of the GNU General Public License
 # along with DracOS Connection Manager.  If not, see <http://www.gnu.org/licenses/>.
 
-from classes.dcm_app import Dcm_app
+from core.cm_app import Cm_app
 
 
 def main():
-    dcm_app_handler = Dcm_app()
-    dcm_app_handler.standby()
+    cm_app_handler = Cm_app()
+    cm_app_handler.standby()
 
 
 if __name__ == '__main__':

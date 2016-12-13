@@ -17,17 +17,18 @@
 # along with DracOS Connection Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-dcm_app
+cm_app
 """
+
 from colorama import Fore, Back, Style, init
-from dcm.classes.dcm_interfaces import Dcm_interfaces
-from dcm.classes.dcm_connection import Dcm_connection
-from dcm.classes.dcm_network import Dcm_network
-from dcm.classes.dcm_help import Dcm_help
-from dcm import (__version__, __author__, __author_email__)
+from cmanager.core.cm_interfaces import Cm_interfaces
+from cmanager.core.cm_connection import Cm_connection
+from cmanager.core.cm_network import Cm_network
+from cmanager.core.cm_help import Cm_help
+from cmanager import (__version__, __author__, __author_email__)
 
 
-class Dcm_app(object):
+class Cm_app(object):
 
     init(autoreset=True)
 
@@ -93,22 +94,22 @@ class Dcm_app(object):
         """
         self.app_header()
 
-        self.dcm_interfaces_handler = Dcm_interfaces()
-        self.dcm_connection_handler = Dcm_connection()
-        self.dcm_network_handler = Dcm_network()
-        self.dcm_help_handler = Dcm_help()
+        self.cm_interfaces_handler = Cm_interfaces()
+        self.cm_connection_handler = Cm_connection()
+        self.cm_network_handler = Cm_network()
+        self.cm_help_handler = Cm_help()
 
         """
         resolve interfaces
         """
-        self.dcm_interfaces_handler.resolve_Interfaces()
-        self.list_ifaces_wireless = self.dcm_interfaces_handler.get_ifaces_wireless()
-        self.list_ifaces_ethernet = self.dcm_interfaces_handler.get_ifaces_ethernet()
-        self.list_ifaces_localhost = self.dcm_interfaces_handler.get_ifaces_localhost()
+        self.cm_interfaces_handler.resolve_Interfaces()
+        self.list_ifaces_wireless = self.cm_interfaces_handler.get_ifaces_wireless()
+        self.list_ifaces_ethernet = self.cm_interfaces_handler.get_ifaces_ethernet()
+        self.list_ifaces_localhost = self.cm_interfaces_handler.get_ifaces_localhost()
 
     def pre(self):
-        if self.dcm_iface != 'NULL':
-            return '(' + self.loc_now + '|' + self.dcm_iface + ') > '
+        if self.cm_iface != 'NULL':
+            return '(' + self.loc_now + '|' + self.cm_iface + ') > '
         else:
             return '(' + self.loc_now + ') > '
 
@@ -121,16 +122,16 @@ class Dcm_app(object):
             total_param = len(self.list_param)
             if self.cmd == 'show':
                 if self.list_param[0] == 'interfaces' and total_param == 1:
-                    self.dcm_interfaces_handler.print_ifaces_wireless_table()
-                    self.dcm_interfaces_handler.print_ifaces_ethernet_table()
-                    self.dcm_interfaces_handler.print_ifaces_localhost_table()
+                    self.cm_interfaces_handler.print_ifaces_wireless_table()
+                    self.cm_interfaces_handler.print_ifaces_ethernet_table()
+                    self.cm_interfaces_handler.print_ifaces_localhost_table()
             elif self.cmd == 'wizard':
                 if self.list_param[0] == 'wifi' and total_param == 1:
                     self.history_loc.append(self.LOC_DASHBOARD_WIZARD_WIFI)
             elif self.cmd == 'exit' and total_param == 0:
                 self.flagExit = True
             elif self.cmd == 'help' and total_param == 0:
-                self.dcm_help_handler.show_help()
+                self.cm_help_handler.show_help()
         except Exception as e:
             print (e)
 
@@ -140,26 +141,26 @@ class Dcm_app(object):
             if self.cmd == 'set' and total_param >= 2:
                 var, value = self.list_param[0], self.list_param[1]
                 if var == 'name':
-                    self.dcm_connection_handler.set_profile_name(value)
+                    self.cm_connection_handler.set_profile_name(value)
                 elif var == 'ssid':
                     value = ' '.join(self.list_param[1::])
-                    self.dcm_connection_handler.set_profile_ssid(value)
+                    self.cm_connection_handler.set_profile_ssid(value)
                 elif var == 'type':
                     if value in ['Open', 'WPA']:
-                        self.dcm_connection_handler.set_profile_type(value)
+                        self.cm_connection_handler.set_profile_type(value)
                     else:
                         self.debug(1, self.ACT_NEG, 2, 'type should \'Open\' or \'WPA\'')
                 elif var == 'passphrase':
                     value = ' '.join(self.list_param[1::])
-                    self.dcm_connection_handler.set_profile_passphrase(value)
+                    self.cm_connection_handler.set_profile_passphrase(value)
             elif self.cmd == 'show' and total_param == 1:
                 if self.list_param[0] == 'profile':
-                    self.dcm_connection_handler.show_profile()
+                    self.cm_connection_handler.show_profile()
                 elif self.list_param[0] == 'options':
-                    self.dcm_connection_handler.show_options()
+                    self.cm_connection_handler.show_options()
             elif self.cmd == 'save':
                 if self.list_param[0] == 'profile' and total_param == 1:
-                    flagSave = self.dcm_connection_handler.save_profile()
+                    flagSave = self.cm_connection_handler.save_profile()
                     if flagSave:
                         self.debug(1, self.ACT_POS, 1, 'Profile\'s saved')
                     else:
@@ -167,31 +168,31 @@ class Dcm_app(object):
             elif self.cmd == 'del':
                 if self.list_param[0] == 'profile' and total_param == 2:
                     profile = self.list_param[1]
-                    flagDel = self.dcm_connection_handler.delete_profile(profile)
+                    flagDel = self.cm_connection_handler.delete_profile(profile)
                     if flagDel:
                         self.debug(1, self.ACT_POS, 1, 'Profile\'s deleted')
                 else:
                     self.debug(1, self.ACT_NEG, 2, 'Profile\'s couldn\'t be deleted')
             elif self.cmd == 'use' and total_param == 1:
                 if self.list_param[0] in self.list_ifaces_wireless:
-                    self.dcm_iface = self.list_param[0]
+                    self.cm_iface = self.list_param[0]
             elif self.cmd == 'scan':
-                if self.dcm_iface != 'NULL' and total_param == 0:
-                    flagScan = self.dcm_network_handler.get_scanning_result(self.dcm_iface)
+                if self.cm_iface != 'NULL' and total_param == 0:
+                    flagScan = self.cm_network_handler.get_scanning_result(self.cm_iface)
                     if not flagScan:
                         self.debug(1, self.ACT_NEG, 2,
                                    'Error\'s occured while scanning available wifi networks')
             elif self.cmd == 'connect':
                 profile = self.list_param[0]
-                if self.dcm_iface != 'NULL' and total_param == 1:
+                if self.cm_iface != 'NULL' and total_param == 1:
                     self.debug(1, self.ACT_SYSTEM, 0, 'Connecting interface \'' +
-                               self.dcm_iface + '\' to profile \'' + profile + '\'')
-                    self.dcm_connection_handler.connect_profile(self.dcm_iface, profile)
+                               self.cm_iface + '\' to profile \'' + profile + '\'')
+                    self.cm_connection_handler.connect_profile(self.cm_iface, profile)
             elif self.cmd == 'back' and total_param == 0:
-                self.dcm_iface = 'NULL'
+                self.cm_iface = 'NULL'
                 self.history_loc.pop()
             elif self.cmd == 'help' and total_param == 0:
-                self.dcm_help_handler.show_help()
+                self.cm_help_handler.show_help()
         except Exception as e:
             print (e)
 
@@ -212,7 +213,7 @@ class Dcm_app(object):
 
     def standby(self):
         self.history_loc = [self.LOC_DASHBOARD]
-        self.dcm_iface = 'NULL'
+        self.cm_iface = 'NULL'
 
         while True:
             try:
