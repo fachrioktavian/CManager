@@ -48,5 +48,5 @@ else
 
 	sudo mkdir /usr/share/dcm
 	sudo cp -R * /usr/share/dcm/
-	sudo ln -s /usr/share/dcm/dcm.py /bin/dcm
+	sudo ln -s /usr/share/dcm/dcm/dcm.py /bin/dcm
 fi
