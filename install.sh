@@ -1,4 +1,4 @@
-#/bin/sh
+#/bin/bash
 
 iwlistbin=$(which iwlist)
 wpabin=$(which wpa_supplicant)
@@ -20,28 +20,28 @@ else
 
 	sudo pip install colorama terminaltables pbkdf2 netifaces python-wifi
 
-	if [[ $sudoersiwlist ]]
+	if [ "$sudoersiwlist" ]
 	then
 		echo "[INSTALL] iwlist has been in sudoers whitelist"
 	else
 		sudo echo "ALL ALL=(ALL) NOPASSWD: $iwlistbin" >> /etc/sudoers
 	fi
 
-	if [[ $sudoerswpa ]]
+	if [ "$sudoerswpa" ]
 	then
 		echo "[INSTALL] wpa_supplicant has been in sudoers whitelist"
 	else
 		sudo echo "ALL ALL=(ALL) NOPASSWD: $wpabin" >> /etc/sudoers
 	fi
 
-	if [[ $sudoersdhclient ]]
+	if [ "$sudoersdhclient" ]
 	then
 		echo "[INSTALL] dhclient has been in sudoers whitelist"
 	else
 		sudo echo "ALL ALL=(ALL) NOPASSWD: $dhclientbin" >> /etc/sudoers
 	fi
 
-	if [[ $sudoerspkill ]]
+	if [ "$sudoerspkill" ]
 	then
 		echo "[INSTALL] pkill has been in sudoers whitelist"
 	else
