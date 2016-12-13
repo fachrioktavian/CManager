@@ -49,6 +49,7 @@ else
 	fi
 
 	sudo mkdir /usr/share/cmanager
+	sudo mkdir /usr/share/cmanager/profile
 	sudo cp -R * /usr/share/cmanager/
 	sudo ln -s /usr/share/cmanager/cmanager/cmanager.py /bin/cmanager
 fi

@@ -45,4 +45,7 @@ else
 	else
 		sudo echo "ALL ALL=(ALL) NOPASSWD: $pkillbin" >> /etc/sudoers
 	fi
+
+	sudo mkdir /usr/share/cmanager
+	sudo mkdir /usr/share/cmanager/profile
 fi
