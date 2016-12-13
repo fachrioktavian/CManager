@@ -1,5 +1,5 @@
 DCM or Connection Manager
-=======================
+============================
 
 .. image:: https://img.shields.io/pypi/v/cmanager.svg?style=flat-square&label=version
    :target: https://pypi.python.org/pypi/cmanager
