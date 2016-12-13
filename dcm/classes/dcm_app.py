@@ -1,30 +1,30 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 # Copyright 2016 Fachrizal Oktavian
-#   This file is part of DracOS Connection Manager.
+# This file is part of DracOS Connection Manager.
 #
-#   DracOS Connection Manager is free software: you can redistribute it and/or modify
-#   it under the terms of the GNU General Public License as published by
-#   the Free Software Foundation, either version 3 of the License, or
-#   (at your option) any later version.
+# DracOS Connection Manager is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 #
-#   DracOS Connection Manager is distributed in the hope that it will be useful,
-#   but WITHOUT ANY WARRANTY; without even the implied warranty of
-#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#   GNU General Public License for more details.
+# DracOS Connection Manager is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
-#   You should have received a copy of the GNU General Public License
-#   along with DracOS Connection Manager.  If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with DracOS Connection Manager.  If not, see <http://www.gnu.org/licenses/>.
 
 """
 dcm_app
 """
 from colorama import Fore, Back, Style, init
-from dcm_interfaces import Dcm_interfaces
-from dcm_connection import Dcm_connection
-from dcm_network import Dcm_network
-from dcm_help import Dcm_help
+from dcm.classes.dcm_interfaces import Dcm_interfaces
+from dcm.classes.dcm_connection import Dcm_connection
+from dcm.classes.dcm_network import Dcm_network
+from dcm.classes.dcm_help import Dcm_help
+from dcm import (__version__, __author__, __author_email__)
 
 
 class Dcm_app(object):
@@ -64,10 +64,14 @@ class Dcm_app(object):
         header += '\t████████▀  ████████▀    ▀█   ███   █▀  \n'
         header2 = '\tDracOS Connection Manager\n'
         header3 = '------------------------------------------------------------------------------\n'
-        header3 += '- Version      : 1.0                                                         -\n'
-        header3 += '- Release Date : December 4th, 2016                                          -\n'
+        header3 += '- Version      : {}                                                         -\n'.format(
+            __version__
+        )
+        header3 += '- Release Date : December 13th, 2016                                         -\n'
         header3 += '- Github       : https://github.com/fachrioktavian/DracOS-Connection-Manager -\n'
-        header3 += '- Dev by       : Fachrizal Oktavian                                          -\n'
+        header3 += '- Dev by       : {} {}                                                       -\n'.format(
+            __author__, __author_email__
+        )
         header3 += '-                                                     << dracos-linux.org >> -\n'
         header3 += '------------------------------------------------------------------------------\n'
         print (Fore.RED + Style.DIM + header + header2)

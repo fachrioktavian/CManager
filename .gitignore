@@ -1,0 +1,6 @@
+__pycahce__/*
+*.pyc
+build/
+dist/
+*.egg-info/
+*.pypirc
