@@ -21,10 +21,10 @@ cm_app
 """
 
 from colorama import Fore, Back, Style, init
-from cmanager.classes.cm_interfaces import Cm_interfaces
-from cmanager.classes.cm_connection import Cm_connection
-from cmanager.classes.cm_network import Cm_network
-from cmanager.classes.cm_help import Cm_help
+from cmanager.core.cm_interfaces import Cm_interfaces
+from cmanager.core.cm_connection import Cm_connection
+from cmanager.core.cm_network import Cm_network
+from cmanager.core.cm_help import Cm_help
 from cmanager import (__version__, __author__, __author_email__)
 
 
