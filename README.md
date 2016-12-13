@@ -57,3 +57,6 @@ The easiest way to contribute to DCM is to file issues.
 
 ##License
 See [LICENSE](https://github.com/fachrioktavian/DracOS-Connection-Manager/blob/master/LICENSE)
+
+##Changelog
+See [CHANGELOG.md](https://github.com/fachrioktavian/DracOS-Connection-Manager/blob/master/CHANGELOG.md)
