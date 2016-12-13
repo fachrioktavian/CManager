@@ -2,7 +2,7 @@ DCM
 =======================
 
 .. image:: https://img.shields.io/pypi/v/dcm.svg?style=flat-square&label=version
-   :target: https://pypi.python.org/pypi/dcm
+   :target: https://pypi.python.org/pypi/cmanager
 
 .. image:: https://img.shields.io/badge/license-GNUGPUv3-blue.svg?style=flat-square
    :target: https://raw.githubusercontent.com/fachrioktavian/DracOS-Connection-Manager/master/LICENSE.txt
@@ -11,7 +11,7 @@ DCM
    :target: https://github.com/fachrioktavian/DracOS-Connection-Manager
 
 .. image:: https://img.shields.io/pypi/dm/dcm.svg?style=flat-square
-   :target: https://pypi.python.org/pypi/dcm
+   :target: https://pypi.python.org/pypi/cmanager
 
 **DracOS Connection Manager** is a CLI (Command Line Interface) based program written in Python.
 This program help DracOS Linux's users to manage their connection ex: wifi connection.
