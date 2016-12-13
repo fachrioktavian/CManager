@@ -18,28 +18,28 @@ else
 	sudoersdhclient=$(sudo cat /etc/sudoers | grep "ALL ALL=(ALL) NOPASSWD: $dhclientbin")
 	sudoerspkill=$(sudo cat /etc/sudoers | grep "ALL ALL=(ALL) NOPASSWD: $pkillbin")
 
-	if [ $sudoersiwlist ]
+	if [[ $sudoersiwlist ]]
 	then
 		echo "[INSTALL] iwlist has been in sudoers whitelist"
 	else
 		sudo echo "ALL ALL=(ALL) NOPASSWD: $iwlistbin" >> /etc/sudoers
 	fi
 
-	if [ $sudoerswpa ]
+	if [[ $sudoerswpa ]]
 	then
 		echo "[INSTALL] wpa_supplicant has been in sudoers whitelist"
 	else
 		sudo echo "ALL ALL=(ALL) NOPASSWD: $wpabin" >> /etc/sudoers
 	fi
 
-	if [ $sudoersdhclient ]
+	if [[ $sudoersdhclient ]]
 	then
 		echo "[INSTALL] dhclient has been in sudoers whitelist"
 	else
 		sudo echo "ALL ALL=(ALL) NOPASSWD: $dhclientbin" >> /etc/sudoers
 	fi
 
-	if [ $sudoerspkill ]
+	if [[ $sudoerspkill ]]
 	then
 		echo "[INSTALL] pkill has been in sudoers whitelist"
 	else

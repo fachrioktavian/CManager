@@ -28,7 +28,7 @@ def main():
     if len(sys.argv) > 1:
         configure = sys.argv[1]
         if configure.lower() == 'configure':
-            os.system('./configure.sh')
+            os.system('./cmanager/configure.sh')
             sys.exit()
 
     cm_app_handler = Cm_app()
