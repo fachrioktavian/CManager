@@ -76,7 +76,8 @@ Wifi-wizard section
 
 **Specifying wireless interface to used by DCM**
 
-Before you can ask DCM to scan available networks and connecting to one of them using profile that you've been created (see profile explanation), you should specify wireless interface that DCM will use to do those activity, type ``use [wireless_interface]``.
+Before you can ask DCM to scan available networks and connecting to one of them using profile that you've been created (see profile explanation),
+you should specify wireless interface that DCM will use to do those activity, type ``use [wireless_interface]``.
 
 .. image:: https://raw.githubusercontent.com/fachrioktavian/DracOS-Connection-Manager/master/screenshots/use_interface.jpeg
 
@@ -92,10 +93,14 @@ To scan available network, simply type ``scan``.
 
 **Creating profile**
 
-Profile in DCM is a configuration file that has information about wifi connection like SSID, type of connection (Open/WPA), and passphrase if the connection is WPA type.
-To create a profile, simply input value to available option (name, ssid, type, passphrase) using ``set name [value]``, ``set ssid [value]``, ``set type [value]``, ``set passphrase [value]``. ``show options`` to see available options. For Open type connection, you just need to input name, ssid, and type, no need to supply passphrase information.
+Profile in DCM is a configuration file that has information about wifi connection like SSID,
+type of connection (Open/WPA), and passphrase if the connection is WPA type.
+To create a profile, simply input value to available option (name, ssid, type, passphrase) using ``set name [value]``,
+``set ssid [value]``, ``set type [value]``, ``set passphrase [value]``. ``show options`` to see available options.
+For Open type connection, you just need to input name, ssid, and type, no need to supply passphrase information.
 
-After all informations needed to create a profile have been provided, simply ``save profile`` and your profile will be saved. To see all information about all profiles that have been saved, type ``show profile``.
+After all informations needed to create a profile have been provided, simply ``save profile`` and your profile will be saved.
+To see all information about all profiles that have been saved, type ``show profile``.
 
 .. image:: https://raw.githubusercontent.com/fachrioktavian/DracOS-Connection-Manager/master/screenshots/create_profile.jpeg
 
@@ -120,9 +125,9 @@ See `LICENSE`_
 Changelog
 ----------------------------
 
-See `CHANGELOG.md`_
+See `CHANGELOG`_
 
 
 .. _PyPI: https://pypi.python.org/pypi/dcm
 .. _LICENSE: https://github.com/fachrioktavian/DracOS-Connection-Manager/blob/master/LICENSE.txt
-.. _CHANGELOG.md: https://github.com/fachrioktavian/DracOS-Connection-Manager/blob/master/CHANGELOG.md
+.. _CHANGELOG: https://github.com/fachrioktavian/DracOS-Connection-Manager/blob/master/CHANGELOG.md
