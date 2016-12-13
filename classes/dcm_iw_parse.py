@@ -4,6 +4,7 @@
 # of each AP (cell) below. They take one argument, the bunch of text
 # describing one cell in iwlist scan and return a property of that cell.
 
+
 def get_name(cell):
     """ Gets the name / essid of a network / cell.
     @param string cell
@@ -12,6 +13,8 @@ def get_name(cell):
         The name / essid of the network.
     """
     return matching_line(cell, "ESSID:")[1:-1]
+
+
 def get_quality(cell):
     """ Gets the quality of a network / cell.
     @param string cell
@@ -21,7 +24,9 @@ def get_quality(cell):
     """
     quality = matching_line(cell, "Quality=").split()[0].split("/")
     return str(int(round(float(quality[0]) / float(quality[1]) * 100))) \
-            .rjust(3) + " %"
+        .rjust(3) + " %"
+
+
 def get_channel(cell):
     """ Gets the channel of a network / cell.
     @param string cell
@@ -30,6 +35,8 @@ def get_channel(cell):
         The channel of the network.
     """
     return matching_line(cell, "Channel:")
+
+
 def get_encryption(cell):
     """ Gets the encryption type of a network / cell.
     @param string cell
@@ -42,14 +49,16 @@ def get_encryption(cell):
         enc = "Open"
     else:
         for line in cell:
-            matching = match(line,"IE:")
+            matching = match(line, "IE:")
             if matching != None:
-                wpa = match(matching,"WPA Version ")
+                wpa = match(matching, "WPA Version ")
                 if wpa != None:
                     enc = "WPA v." + wpa
         if enc == "":
             enc = "WEP"
     return enc
+
+
 def get_address(cell):
     """ Gets the address of a network / cell.
     @param string cell
@@ -58,23 +67,29 @@ def get_address(cell):
         The address of the network.
     """
     return matching_line(cell, "Address: ")
-# Here you can choose the way of sorting the table. sortby should be a key of
-# the dictionary rules.
+
+
 def sort_cells(cells):
+    # Here you can choose the way of sorting the table. sortby should be a key of
+    # the dictionary rules.
     sortby = "Quality"
     reverse = True
-    cells.sort(None, lambda el:el[sortby], reverse)
-# Below here goes the boring stuff. You shouldn't have to edit anything below
-# this point
+    cells.sort(None, lambda el: el[sortby], reverse)
+
+
 def matching_line(lines, keyword):
+    # Below here goes the boring stuff. You shouldn't have to edit anything below
+    # this point
     """ Returns the first matching line in a list of lines.
     @see match()
     """
     for line in lines:
-        matching = match(line,keyword)
+        matching = match(line, keyword)
         if matching != None:
             return matching
     return None
+
+
 def match(line, keyword):
     """ If the first part of line (modulo blanks) matches keyword,
     returns the end of that line. Otherwise returns None"""
@@ -84,6 +99,8 @@ def match(line, keyword):
         return line[length:]
     else:
         return None
+
+
 def parse_cell(cell, rules):
     """ Applies the rules to the bunch of text describing a cell.
     @param string cell
@@ -97,6 +114,8 @@ def parse_cell(cell, rules):
         rule = rules[key]
         parsed_cell.update({key: rule(cell)})
     return parsed_cell
+
+
 def print_table(table):
     # Functional black magic.
     widths = map(max, map(lambda l: map(len, l), zip(*table)))
@@ -108,8 +127,10 @@ def print_table(table):
         justified_table.append(justified_line)
     for line in justified_table:
         for el in line:
-            print el,
-        print
+            print (el,)
+        print ('')
+
+
 def print_cells(cells, columns):
     table = [columns]
     for cell in cells:
@@ -118,6 +139,8 @@ def print_cells(cells, columns):
             cell_properties.append(cell[column])
         table.append(cell_properties)
     print_table(table)
+
+
 def get_parsed_cells(iw_data, rules=None):
     """ Parses iwlist output into a list of networks.
         @param str iw_data

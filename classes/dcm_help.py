@@ -14,30 +14,31 @@
 #   You should have received a copy of the GNU General Public License
 #   along with DracOS Connection Manager.  If not, see <http://www.gnu.org/licenses/>.
 
-'''
+"""
 dcm_help
-'''
+"""
 
 from colorama import Fore, Back, Style, init
 
+
 class Dcm_help(object):
 
-	init(autoreset=True)
+    init(autoreset=True)
 
-	def show_help(self):
-		help = 'dashboard section:\n'
-		help+= ' show interfaces          : Print all interfaces found by dcm\n'
-		help+= ' wizard wifi              : Go to wifi wizard section\n'
-		help+= ' exit                     : Exit dcm\n\n'
-		help+= 'wifi-wizard section:\n'
-		help+= ' show profile             : List profile that saved by dcm\n'
-		help+= ' show options             : List available options used to create a profile\n'
-		help+= ' set [options] [value]    : Set value to available options before save the profile\n'
-		help+= ' save profile             : Save profile after options data\'s been filled\n'
-		help+= ' del profile [profile]    : Del profile by profile\'s name\n'
-		help+= ' use [wireless_intarface] : Use this command BEFORE scanning available network or connecting a profile\n'
-		help+= ' scan                     : Scanning available networks\n'
-		help+= ' connect [profile]        : Connecting wireless interface to a wifi network using specified profile\'s name\n'
-		help+= ' back                     : Back to dashboard section'
+    def show_help(self):
+        help = 'dashboard section:\n'
+        help += ' show interfaces          : Print all interfaces found by dcm\n'
+        help += ' wizard wifi              : Go to wifi wizard section\n'
+        help += ' exit                     : Exit dcm\n\n'
+        help += 'wifi-wizard section:\n'
+        help += ' show profile             : List profile that saved by dcm\n'
+        help += ' show options             : List available options used to create a profile\n'
+        help += ' set [options] [value]    : Set value to available options before save the profile\n'
+        help += ' save profile             : Save profile after options data\'s been filled\n'
+        help += ' del profile [profile]    : Del profile by profile\'s name\n'
+        help += ' use [wireless_intarface] : Use this command BEFORE scanning available network or connecting a profile\n'
+        help += ' scan                     : Scanning available networks\n'
+        help += ' connect [profile]        : Connecting wireless interface to a wifi network using specified profile\'s name\n'
+        help += ' back                     : Back to dashboard section'
 
-		print Fore.GREEN+Style.BRIGHT+help
+        print (Fore.GREEN + Style.BRIGHT + help)
