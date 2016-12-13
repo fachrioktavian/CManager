@@ -1,7 +1,6 @@
-#Documentation
-#####DCM (DracOS Connection Manager) is a CLI (Command Line Interface) based program written in Python. This program help DracOS Linux's users to manage their connection ex: wifi connection
-***
-***
+#DCM
+DracOS Connection Manager is a CLI (Command Line Interface) based program written in Python. This program help DracOS Linux's users to manage their connection ex: wifi connection
+
 ##Installation
 DCM needs some python module:
 - colorama: `sudo pip install colorama`
@@ -18,7 +17,7 @@ DCM needs some program/binary in sudoers file's whitelist so it won't ask for pa
 
 To make you easier in installing DCM, just use install.sh script. You just need to run it with `./install.sh`  
 
-##DracOS Connection Manager v1.0
+##Documentation
 Don't forget to run dcm as with `sudo dcm`, type `help` inside DCM to get information about available commands
 
 ![](screenshots/help.jpeg) 
@@ -53,4 +52,8 @@ To connecting DCM to a network use a specified profile name, type `connect [prof
 
 ![](screenshots/connect_wifi.jpeg)
 
- 
+##Contributing to DCM
+The easiest way to contribute to DCM is to file issues.
+
+##License
+See [LICENSE](https://github.com/fachrioktavian/DracOS-Connection-Manager/blob/master/LICENSE)
