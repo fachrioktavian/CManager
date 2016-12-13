@@ -18,7 +18,7 @@
 dcm_network
 """
 import subprocess
-import dcm_iw_parse
+import dcm.dcm_iw_parse
 from terminaltables import AsciiTable
 from colorama import Fore, Back, Style, init
 
