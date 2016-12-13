@@ -2,6 +2,8 @@
 DracOS Connection Manager is a CLI (Command Line Interface) based program written in Python. This program help DracOS Linux's users to manage their connection ex: wifi connection
 
 ##Installation
+Attention: DCM require the user as a SUDOERS user
+
 DCM needs some python module:
 - colorama: `sudo pip install colorama`
 - terminaltables: `sudo pip install terminaltables `
