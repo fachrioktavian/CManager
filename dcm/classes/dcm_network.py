@@ -18,7 +18,7 @@
 dcm_network
 """
 import subprocess
-import dcm.classes.dcm_iw_parse
+from dcm.classes.dcm_iw_parse import get_parsed_cells
 from terminaltables import AsciiTable
 from colorama import Fore, Back, Style, init
 
@@ -37,7 +37,7 @@ class Dcm_network(object):
                 ['sudo', 'iwlist', iface, 'scanning'],
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE
             )
-            self.parsed_cells = dcm_iw_parse.get_parsed_cells(iw_result.stdout)
+            self.parsed_cells = get_parsed_cells(iw_result.stdout)
             return True
         except:
             return False
