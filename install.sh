@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 iwlistbin=$(which iwlist)
 wpabin=$(which wpa_supplicant)
