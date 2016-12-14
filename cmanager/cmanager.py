@@ -15,10 +15,22 @@
 # You should have received a copy of the GNU General Public License
 # along with CManager.  If not, see <http://www.gnu.org/licenses/>.
 
+import os
+import sys
 from core.cm_app import Cm_app
 
 
 def main():
+    if os.getuid() != 0:
+        print ("[-] Please Access as root..!")
+        sys.exit()
+
+    if len(sys.argv) > 1:
+        configure = sys.argv[1]
+        if configure.lower() == 'configure':
+            os.system('./cmanager/configure.sh')
+            sys.exit()
+
     cm_app_handler = Cm_app()
     cm_app_handler.standby()
 

@@ -1,6 +1,7 @@
 include setup.py
-include install.sh
 include README.rst
 include LICENSE.txt
 include CHANGELOG.md
+include install.sh
+include cmanager/configure.sh
 recursive-include screenshots *

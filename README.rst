@@ -4,7 +4,7 @@ DCM or Connection Manager
 .. image:: https://img.shields.io/pypi/v/cmanager.svg?style=flat-square&label=version
    :target: https://pypi.python.org/pypi/cmanager
 
-.. image:: https://img.shields.io/badge/license-GNUGPUv3-blue.svg?style=flat-square
+.. image:: https://img.shields.io/badge/license-GNUGPLv3-blue.svg?style=flat-square
    :target: https://raw.githubusercontent.com/fachrioktavian/DracOS-Connection-Manager/master/LICENSE.txt
 
 .. image:: https://img.shields.io/pypi/pyversions/cmanager.svg?style=flat-square
@@ -26,13 +26,14 @@ You can install DCM directly from `PyPI`_:
 ::
 
     $ sudo pip install cmanager
-
+    $ sudo cmanager configure
 
 Or download from github repository, then:
 
 ::
 
     $ sudo python setup.py install
+    $ sudo cmanager configure
     # Or
     $ sudo ./install.sh
 
@@ -53,6 +54,14 @@ DCM needs some program/binary in sudoers file's whitelist so it won't ask for pa
 - pkill
 
 To make you easier in installing DCM, just use install.sh script. You just need to run it with ``./install.sh``
+
+Usage
+------------------------
+
+::
+
+    $ sudo cmanager
+
 
 Documentation
 ------------------------

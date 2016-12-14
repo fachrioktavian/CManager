@@ -25,7 +25,10 @@ from cmanager.core.cm_interfaces import Cm_interfaces
 from cmanager.core.cm_connection import Cm_connection
 from cmanager.core.cm_network import Cm_network
 from cmanager.core.cm_help import Cm_help
-from cmanager import (__version__, __author__, __author_email__)
+from cmanager import (
+    __version__, __author__,
+    __author_email__, __release_date__
+)
 
 
 class Cm_app(object):
@@ -55,24 +58,20 @@ class Cm_app(object):
 
     def app_header(self):
         header = '\n'
-        header += ' ██████╗███╗   ███╗ █████╗ ███╗   ██╗ █████╗  ██████╗ ███████╗██████╗ \n'
-        header += '██╔════╝████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝ ██╔════╝██╔══██╗\n'
-        header += '██║     ██╔████╔██║███████║██╔██╗ ██║███████║██║  ███╗█████╗  ██████╔╝\n'
-        header += '██║     ██║╚██╔╝██║██╔══██║██║╚██╗██║██╔══██║██║   ██║██╔══╝  ██╔══██╗\n'
-        header += '╚██████╗██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗██║  ██║\n'
-        header += ' ╚═════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝\n'
-        header2 = 'Connection Manager\n'
-        header3 = '------------------------------------------------------------------------------\n'
-        header3 += '- Version      : {}                                                         -\n'.format(
-            __version__
-        )
-        header3 += '- Release Date : December 14th, 2016                                         -\n'
-        header3 += '- Github       : https://github.com/fachrioktavian/DracOS-Connection-Manager -\n'
-        header3 += '- Dev by       : {} {}                                                       -\n'.format(
-            __author__, __author_email__
-        )
-        header3 += '-                                                     << dracos-linux.org >> -\n'
-        header3 += '------------------------------------------------------------------------------\n'
+        header += '  ██████╗███╗   ███╗ █████╗ ███╗   ██╗ █████╗  ██████╗ ███████╗██████╗ \n'
+        header += ' ██╔════╝████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝ ██╔════╝██╔══██╗\n'
+        header += ' ██║     ██╔████╔██║███████║██╔██╗ ██║███████║██║  ███╗█████╗  ██████╔╝\n'
+        header += ' ██║     ██║╚██╔╝██║██╔══██║██║╚██╗██║██╔══██║██║   ██║██╔══╝  ██╔══██╗\n'
+        header += ' ╚██████╗██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗██║  ██║\n'
+        header += '  ╚═════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝\n'
+        header2 = ' Connection Manager\n'
+        header3 = ' {}\n'.format('-' * 70)
+        header3 += ' Version      : {}\n'.format(__version__)
+        header3 += ' Release date : {}\n'.format(__release_date__)
+        header3 += ' Github       : https://github.com/fachrioktavian/CManager\n'
+        header3 += ' Dev by       : {0} - ({1})\n'.format(__author__, __author_email__)
+        header3 += ' Official     : https://dracos-linux.org\n'
+        header3 += ' {}\n'.format('-' * 70)
         print (Fore.RED + Style.DIM + header + header2)
         print (Fore.CYAN + Style.DIM + header3)
 
