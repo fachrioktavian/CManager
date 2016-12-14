@@ -1,4 +1,4 @@
-DCM or Connection Manager
+DCM or CManager
 ============================
 
 .. image:: https://img.shields.io/pypi/v/cmanager.svg?style=flat-square&label=version
@@ -13,15 +13,15 @@ DCM or Connection Manager
 .. image:: https://img.shields.io/pypi/dm/cmanager.svg?style=flat-square
    :target: https://pypi.python.org/pypi/cmanager
 
-**DracOS Connection Manager** is a CLI (Command Line Interface) based program written in Python.
-This program help DracOS Linux's users to manage their connection ex: wifi connection.
+**DracOS Connection Manager**/**Connection Manager** is a CLI (Command Line Interface) based program written in Python.
+This program help DracOS Linux's users to manage their connection ex: wifi connection. For other Linux distros' users, feel free to use this program.
 
 Installation
 ------------------------
 
-    DCM require the user as sudoers.
+    CManager require the user as sudoers.
 
-You can install DCM directly from `PyPI`_:
+You can install CManager directly from `PyPI`_:
 
 ::
 
@@ -46,14 +46,14 @@ Or download from github repository, then:
 - netifaces: ``sudo pip install netifaces``
 - python-wifi: ``sudo pip install python-wifi``
 
-DCM needs some program/binary in sudoers file's whitelist so it won't ask for password while executing those program:
+CManager needs some program/binary in sudoers file's whitelist so it won't ask for password while executing those program:
 
 - iwlist
 - wpa_supplicant
 - dhclient
 - pkill
 
-To make you easier in installing DCM, just use install.sh script. You just need to run it with ``./install.sh``
+To make you easier in installing CManager, just use install.sh script. You just need to run it with ``./install.sh``
 
 Usage
 ------------------------
@@ -68,27 +68,27 @@ Documentation
 
 Don't forget to run cmanager as with ``sudo cmanager``, type ``help`` inside DCM to get information about available commands
 
-.. image:: https://raw.githubusercontent.com/fachrioktavian/DracOS-Connection-Manager/master/screenshots/help.jpeg
+.. image:: https://raw.githubusercontent.com/fachrioktavian/CManager/master/screenshots/help.jpeg
 
 Dashboard section
 ------------------------
 
 **See available interfaces**
 
-DCM will detect interfaces on your system, categorize them into three types of interface (wireless, ethernet, localhost).
+CManager will detect interfaces on your system, categorize them into three types of interface (wireless, ethernet, localhost).
 Use ``show interface`` to print those interface
 
-.. image:: https://raw.githubusercontent.com/fachrioktavian/DracOS-Connection-Manager/master/screenshots/show_interfaces.jpeg
+.. image:: https://raw.githubusercontent.com/fachrioktavian/CManager/master/screenshots/show_interfaces.jpeg
 
 Wifi-wizard section
 -------------------------
 
 **Specifying wireless interface to used by DCM**
 
-Before you can ask DCM to scan available networks and connecting to one of them using profile that you've been created (see profile explanation),
-you should specify wireless interface that DCM will use to do those activity, type ``use [wireless_interface]``.
+Before you can ask CManager to scan available networks and connecting to one of them using profile that you've been created (see profile explanation),
+you should specify wireless interface that CManager will use to do those activity, type ``use [wireless_interface]``.
 
-.. image:: https://raw.githubusercontent.com/fachrioktavian/DracOS-Connection-Manager/master/screenshots/use_interface.jpeg
+.. image:: https://raw.githubusercontent.com/fachrioktavian/CManager/master/screenshots/use_interface.jpeg
 
 ----------------------------
 
@@ -96,13 +96,13 @@ you should specify wireless interface that DCM will use to do those activity, ty
 
 To scan available network, simply type ``scan``.
 
-.. image:: https://raw.githubusercontent.com/fachrioktavian/DracOS-Connection-Manager/master/screenshots/scan_networks.jpeg
+.. image:: https://raw.githubusercontent.com/fachrioktavian/CManager/master/screenshots/scan_networks.jpeg
 
 ----------------------------
 
 **Creating profile**
 
-Profile in DCM is a configuration file that has information about wifi connection like SSID, type of connection (Open/WPA), and passphrase if the connection is WPA type.
+Profile in CManager is a configuration file that has information about wifi connection like SSID, type of connection (Open/WPA), and passphrase if the connection is WPA type.
 To create a profile, simply input value to available option (name, ssid, type, passphrase) using ``set name [value]``,
 ``set ssid [value]``, ``set type [value]``, ``set passphrase [value]``. ``show options`` to see available options. For Open type connection,
 you just need to input name, ssid, and type, no need to supply passphrase information.
@@ -110,20 +110,20 @@ you just need to input name, ssid, and type, no need to supply passphrase inform
 After all informations needed to create a profile have been provided, simply ``save profile`` and your profile will be saved.
 To see all information about all profiles that have been saved, type ``show profile``.
 
-.. image:: https://raw.githubusercontent.com/fachrioktavian/DracOS-Connection-Manager/master/screenshots/create_profile.jpeg
+.. image:: https://raw.githubusercontent.com/fachrioktavian/CManager/master/screenshots/create_profile.jpeg
 
 ----------------------------
 
 **Connecting to a network**
 
-To connecting DCM to a network use a specified profile name, type ``connect [profile]``. To disconnect it, simply type ``CTRL+C``.
+To connecting CManager to a network use a specified profile name, type ``connect [profile]``. To disconnect it, simply type ``CTRL+C``.
 
-.. image:: https://raw.githubusercontent.com/fachrioktavian/DracOS-Connection-Manager/master/screenshots/connect_wifi.jpeg
+.. image:: https://raw.githubusercontent.com/fachrioktavian/Cmanager/master/screenshots/connect_wifi.jpeg
 
-Contributing to DCM
+Contributing to CManager
 ----------------------------
 
-The easiest way to contribute to DCM is to file issues.
+The easiest way to contribute to CManager is to file issues.
 
 License
 ----------------------------
@@ -135,6 +135,10 @@ Changelog
 
 See `CHANGELOG.md`_
 
+Special thanks to
+----------------------------
+
+   * `Agus Makmun <https://github.com/agusmakmun>`_ for the contribution making this program downloadable via PyPi 
 
 .. _PyPI: https://pypi.python.org/pypi/cmanager
 .. _LICENSE: https://github.com/fachrioktavian/DracOS-Connection-Manager/blob/master/LICENSE.txt
