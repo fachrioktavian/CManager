@@ -11,7 +11,7 @@ setup(
     version=__version__,
     platforms=["Linux"],
     url='https://github.com/fachrioktavian/CManager/',
-    download_url='https://github.com/fachrioktavian/CManager/tarball/{}'.format(
+    download_url='https://github.com/fachrioktavian/CManager/tarball/v{}'.format(
         __version__),
     description="CLI (Command Line Interface) for DracOS Linux's users to manage their connection ex: wifi connection.",
     long_description=open("README.rst").read(),

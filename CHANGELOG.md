@@ -1,3 +1,7 @@
+##2. - 15/12/2016
+
+* Miss download tarbal version
+
 ##2.5 - 15/12/2016
 
 * Fixed configure on Pypi installer.
