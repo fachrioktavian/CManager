@@ -28,7 +28,8 @@ def main():
     if len(sys.argv) > 1:
         configure = sys.argv[1]
         if configure.lower() == 'configure':
-            os.system('./cmanager/configure.sh')
+            DIR_BASE = os.path.dirname(os.path.realpath(__file__))
+            os.system(DIR_BASE+'/configure.sh')
             sys.exit()
 
     cm_app_handler = Cm_app()
