@@ -1,4 +1,4 @@
-##2. - 15/12/2016
+##2.6 - 15/12/2016
 
 * Miss download tarbal version
 
