@@ -29,7 +29,7 @@ def main():
         configure = sys.argv[1]
         if configure.lower() == 'configure':
             DIR_BASE = os.path.dirname(os.path.realpath(__file__))
-            os.system(DIR_BASE+'/configure.sh')
+            os.system(DIR_BASE + '/configure.sh')
             sys.exit()
 
     cm_app_handler = Cm_app()
